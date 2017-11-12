@@ -27,7 +27,7 @@ describe 'Apply Rules' do
       puts rule.class.name
       rule.action.expect be_instance_of Actions::BasicAction
     end
-    rule_processor.applied_rules.size.expect eql 1
+    rule_processor.applied_rules.size.should eql 1
   end
 
   it 'should run a SendEmail Action when the event action is "unlock", "object_type" is "Lock" and "success" is false' do
@@ -56,6 +56,6 @@ describe 'Apply Rules' do
       puts rule.class.name
       rule.action.expect be_instance_of Actions::SendEmailAction
     end
-    rule_processor.applied_rules.size.expect eql 1
+    rule_processor.applied_rules.size.should eql 1
   end
 end
