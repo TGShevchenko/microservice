@@ -24,8 +24,7 @@ describe 'Apply Rules' do
     rule_processor.define_rules
     rule_processor.apply_rules(data)
     rule_processor.applied_rules.each do |rule|
-      puts rule.class.name
-      rule.action.expect be_instance_of Actions::BasicAction
+      rule.action.should be_instance_of Actions::BasicAction
     end
     rule_processor.applied_rules.size.should eql 1
   end
@@ -53,8 +52,7 @@ describe 'Apply Rules' do
     rule_processor.define_rules
     rule_processor.apply_rules(data)
     rule_processor.applied_rules.each do |rule|
-      puts rule.class.name
-      rule.action.expect be_instance_of Actions::SendEmailAction
+      rule.action.should be_instance_of Actions::SendEmailAction
     end
     rule_processor.applied_rules.size.should eql 1
   end
