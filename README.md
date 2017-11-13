@@ -27,7 +27,10 @@
      RAILS_ENV=development bundle exec rails s
   
 #### Classes used in the project
-     WebhooksController - A controller class that receives the incoming requests with event data.
+     WebhooksController - A controller class that receives the incoming requests with event data. 
+     
+     The following classes are lying under the lib directory: 
+     
      RuleProcessor - A main class that created and applies the rules.
      RuleBuilder - Builds a rule and keeps it in its rules collection.
      Rule - A rule class.
@@ -38,6 +41,6 @@
      TimeRuleField,
      UserRuleField 
        - Classes, each of them represents one parameter (one rule field) that is being matched when the rule applied. 
-    BasicAction - A basic class for actions.
-    SendEmailAction - A specific action that runs and initiates email sending for subscribers when a rule maches. 
-    Mailer - A class is responsible for sending emails.
+     BasicAction - A basic class for actions.
+     SendEmailAction - A specific action that runs and initiates email sending for subscribers when a rule maches. 
+     Mailer - A class is responsible for sending emails.
