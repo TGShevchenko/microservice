@@ -1,13 +1,7 @@
 # README
 
-#### This README would normally document whatever steps are necessary to get the
-#### application up and running.
-
-#### Things you may want to cover:
-
 #### Ruby version
      2.4.1p111
-#### System dependencies
 
 #### Configuration
      The following steps should be done as prerequisites:
@@ -17,10 +11,6 @@
      2. Register the application using POST method to https://api.getkisi.com/integrations
      The callback URL is http://stripe.kisi.ultrahook.com/hooks.
      
-#### Database creation
-
-#### Database initialization
-
 #### How to run the test suite
      rspec spec/lib/apply_rule_spec.rb
 
@@ -51,6 +41,3 @@
     BasicAction - A basic class for actions.
     SendEmailAction - A specific action that runs and initiates email sending for subscribers when a rule maches. 
     Mailer - A class is responsible for sending emails.
-  
-
-  
