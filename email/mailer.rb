@@ -13,16 +13,19 @@ module Email
       }
     end
 
+    ##
+    # Sends an Email notification to a user.
+    #
+    # @param [Hash] mail_options
     def send_email(mail_options)
       mail = Mail.new do
-        to mail_options[:to] #'altarangen@gmail.com'
+        to mail_options[:to]
         from 'testkisktask@gmail.com'
-        subject mail_options[:subject] #'Test'
-        body mail_options[:body] #'Hurray!!! Test email!'
+        subject mail_options[:subject]
+        body mail_options[:body]
       end
       mail.delivery_method :smtp, @mail_options
       mail.deliver
     end
-
   end
 end

@@ -1,5 +1,10 @@
 module Actions
   class SendEmailAction < BasicAction
+    ##
+    # Runs an action with sending emails.
+    #
+    # @param [Rules::Rule] rule
+    #
     def run(rule)
       puts 'Sending an email...'
       mailer = Email::Mailer.new

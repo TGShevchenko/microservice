@@ -50,7 +50,7 @@ Things you may want to cover:
   * BasicAction - A basic class for actions.
   * SendEmailAction - A specific action that runs and initiates email sending for subscribers 
                       when a rule maches. 
-  * Mailer - A class responsible for sending emails.
+  * Mailer - A class is responsible for sending emails.
   
 
   

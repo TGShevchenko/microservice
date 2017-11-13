@@ -21,12 +21,11 @@ describe 'Apply Rules' do
         'created_at' => '2017-11-12T17:39:52+00:00'
     }
     rule_processor = Rules::RuleProcessor.new
-    rule_processor.define_rules
     rule_processor.apply_rules(data)
     rule_processor.applied_rules.each do |rule|
       rule.action.should be_instance_of Actions::BasicAction
     end
-    rule_processor.applied_rules.size.should eql 1
+    rule_processor.applied_rules.size.should be > 0
   end
 
   it 'should run a SendEmail Action when the event action is "unlock", "object_type" is "Lock" and "success" is false' do
@@ -49,11 +48,10 @@ describe 'Apply Rules' do
         'created_at' => '2017-11-12T17:39:43+00:00'
     }
     rule_processor = Rules::RuleProcessor.new
-    rule_processor.define_rules
     rule_processor.apply_rules(data)
     rule_processor.applied_rules.each do |rule|
       rule.action.should be_instance_of Actions::SendEmailAction
     end
-    rule_processor.applied_rules.size.should eql 1
+    rule_processor.applied_rules.size.should be > 0
   end
 end

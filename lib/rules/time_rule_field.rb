@@ -1,10 +1,28 @@
 module Rules
+  ##
+  # It represents a rule field to filter
+  # the created_at data from an event using
+  # a time interval
+  #
   class TimeRuleField < BasicRuleField
-    def rule_field_match?(time)
-      time = DateTime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').to_time
+    ##
+    # Checks if a rule field value matches against
+    # a time_string value from received event data
+    #
+    # @param [String] time_string
+    # @return [TrueClass|FalseClass]
+    #
+    def rule_field_match?(time_string)
+      time = DateTime.strptime(time_string, '%Y-%m-%dT%H:%M:%S%z').to_time
       time_in_allowed_range?(time)
     end
 
+    ##
+    # Returns true if a time parameter withing a given time interval
+    #
+    # @param [Time] time
+    # @return [TrueClass|FalseClass]
+    #
     def time_in_allowed_range?(time)
       range = @matching_value
       change_time_l = lambda {|range_part, time|

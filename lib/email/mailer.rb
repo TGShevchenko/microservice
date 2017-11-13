@@ -1,7 +1,11 @@
 require 'mail'
 
 module Email
+  ##
+  # This class is responsible for sending emails
+  #
   class Mailer
+
     def initialize
       @mail_options = {
           :address              => 'smtp.gmail.com',
@@ -13,16 +17,21 @@ module Email
       }
     end
 
+    ##
+    # Sends an Email notification to a user.
+    #
+    # @param [Hash] mail_options
+    #
     def send_email(mail_options)
+      user_name = @mail_options[:user_name]
       mail = Mail.new do
-        to mail_options[:to] #'altarangen@gmail.com'
-        from 'testkisktask@gmail.com'
-        subject mail_options[:subject] #'Test'
-        body mail_options[:body] #'Hurray!!! Test email!'
+        to mail_options[:to]
+        from user_name
+        subject mail_options[:subject]
+        body mail_options[:body]
       end
       mail.delivery_method :smtp, @mail_options
       mail.deliver
     end
-
   end
 end

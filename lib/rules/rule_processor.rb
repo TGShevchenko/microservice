@@ -1,4 +1,8 @@
 module Rules
+  ##
+  # It is responsible for defining rules and applying them to
+  # the received event data
+  #
   class RuleProcessor
     attr_accessor :applied_rules
 
@@ -7,12 +11,9 @@ module Rules
       @applied_rules = []
     end
 
-    def define_rules
-      add_rule_a
-      add_rule_b
-      add_rule_unlock_unsuccessful
-    end
-
+    ##
+    # Adds a rule A
+    #
     def add_rule_a
       rule_attributes = {}
       rule_field_attributes = []
@@ -37,6 +38,9 @@ module Rules
       @rule_builder.add_rule(rule_attributes)
     end
 
+    ##
+    # Adds a rule B
+    #
     def add_rule_b
       rule_attributes = {}
       rule_field_attributes = []
@@ -61,6 +65,9 @@ module Rules
       @rule_builder.add_rule(rule_attributes)
     end
 
+    ##
+    # Adds a rule when the unlock event value is unsuccessful
+    #
     def add_rule_unlock_unsuccessful
       rule_attributes = {}
       rule_field_attributes = []
@@ -83,17 +90,29 @@ module Rules
       @rule_builder.add_rule(rule_attributes)
     end
 
+    ##
+    # Applies the defined rules to the received event data
+    #
+    # @param [Hash] data_to_match
     def apply_rules(data_to_match)
+      define_rules
       @applied_rules = []
       @rule_builder.rules.each do |rule|
         if rule.rule_match? data_to_match
           # Applying the matched rule
-          puts "Rule matched=#{rule}"
           rule.run_action
           @applied_rules << rule
         end
       end
     end
 
+    ##
+    # Defines the applicable rules
+    #
+    def define_rules
+      add_rule_a
+      add_rule_b
+      add_rule_unlock_unsuccessful
+    end
   end
 end
