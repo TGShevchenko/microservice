@@ -10,18 +10,18 @@ gem "ffi", ">= 1.9.24"
 gem "sprockets", ">= 3.7.2"
 gem "nokogiri", '~> 1.11.4'
 gem "websocket-extensions", ">= 0.1.5"
-gem "activesupport", ">= 5.2.4.3"
-gem "actionpack", ">= 5.2.4.3"
+gem "activesupport", "~> 6.1.3"
+gem "actionpack", "~> 6.1.3"
 gem "rake", ">= 12.3.3"
 
 # Use Puma as the app server
 gem "puma", ">= 3.12.6"
-gem "actionview", ">= 5.2.4.4"
-gem "activejob", ">= 5.1.6.1"
+gem "actionview", "~> 6.1.3"
+gem "activejob", "~> 6.1.3"
 gem "rails-html-sanitizer", ">= 1.0.4"
 gem "loofah", ">= 2.3.1"
 # Bundle edge Rails instead: gem rubyzip'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.4'
+gem 'rails', '~> 6.1.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
