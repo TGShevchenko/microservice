@@ -8,7 +8,7 @@ end
 gem "rubyzip", ">= 1.3.0"
 gem "ffi", ">= 1.9.24"
 gem "sprockets", ">= 3.7.2"
-gem "nokogiri", '~> 1.11.4'
+#gem "nokogiri", '~> 1.11.4'
 gem "websocket-extensions", ">= 0.1.5"
 gem "activesupport", "~> 6.1.3"
 gem "actionpack", "~> 6.1.3"
